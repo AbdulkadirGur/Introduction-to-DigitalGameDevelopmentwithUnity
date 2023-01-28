@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     public Transform muzzle;
 
     public Transform bullet, floatingtext , bloodParticle;
+    public GameObject EndUI;
      
 
     bool mouseIsNotOverUI;
@@ -62,9 +63,12 @@ public class PlayerManager : MonoBehaviour
             
             Destroy(Instantiate(bloodParticle, transform.position, Quaternion.identity), 3f); // kan efekkti 
             
-            DataManager.Instance.LoseProcess(); 
+            //DataManager.Instance.LoseProcess(); 
             dead = true;
+
             Destroy(gameObject);
+            EndUI.SetActive(true);
+            
         }
     }
 
@@ -73,6 +77,6 @@ public class PlayerManager : MonoBehaviour
         Transform tempBullet;
         tempBullet = Instantiate(bullet , muzzle.position , Quaternion.identity);
         tempBullet.GetComponent<Rigidbody2D>().AddForce(muzzle.forward * bulletSpeed);
-        DataManager.Instance.ShotBullet++;
+        //DataManager.Instance.ShotBullet++;
     }
 }

@@ -39,7 +39,7 @@ public class DataManager : MonoBehaviour
         
     }
 
-    public int ShotBullet
+    /*public int ShotBullet
     {
         get 
         { 
@@ -52,7 +52,7 @@ public class DataManager : MonoBehaviour
         
         }
         
-    }
+    }*/
 
     public int EnemyKilled  
     {
